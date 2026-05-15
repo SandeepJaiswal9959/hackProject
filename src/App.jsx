@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { generateSubscribers, getEngagementTrend } from './utils/dataGenerator';
 import { processSubscribers } from './utils/riskEngine';
+import AIEvaluator from './components/EvaluationPanel';
 import { 
   Users, AlertTriangle, TrendingDown, Clock, 
   Search, Filter, Bell, LayoutDashboard,
@@ -241,6 +242,9 @@ function App() {
             )}
           </aside>
         </div>
+
+        {/* AI-Powered Solution Evaluator */}
+        <AIEvaluator />
       </main>
     </div>
   );
