@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"for /f \\\\\"tokens=5\\\\\" %a in \\('netstat -aon ^| findstr :8000 ^| findstr LISTENING'\\) do taskkill /F /PID %a\")",
+      "Bash(cmd /c \"for /f \\\\\"tokens=5\\\\\" %a in \\('netstat -aon ^| findstr :8001 ^| findstr LISTENING'\\) do taskkill /F /PID %a\")",
+      "Bash(python -m uvicorn api_server:app --port 8002)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}

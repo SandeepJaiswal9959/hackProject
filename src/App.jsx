@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { generateSubscribers, getEngagementTrend } from './utils/dataGenerator';
-import { processSubscribers } from './utils/riskEngine';
+import { useState, useEffect } from 'react';
+import { getEngagementTrend } from './utils/dataGenerator';
 import AIEvaluator from './components/EvaluationPanel';
-import { 
-  Users, AlertTriangle, TrendingDown, Clock, 
-  Search, Filter, Bell, LayoutDashboard,
-  ChevronRight, ArrowDownRight, ArrowUpRight,
+import GlidAnalyzer from './components/GlidAnalyzer';
+import {
+  Users, AlertTriangle, TrendingDown, Clock,
+  Search, Bell, LayoutDashboard,
+  ChevronRight, ArrowUpRight,
   RefreshCw, Sparkles
 } from 'lucide-react';
 import { 
-  LineChart, Line, XAxis, YAxis, CartesianGrid, 
+  XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, AreaChart, Area 
 } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
+  const [subscribers, setSubscribers] = useState([]);
+  const [selectedSub, setSelectedSub] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [aiInsights, setAiInsights] = useState(null);
+  const [insightLoading, setInsightLoading] = useState(false);
+  const [apiKey, setApiKey] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterRisk, setFilterRisk] = useState('All');
 
@@ -23,9 +29,9 @@ function App() {
       try {
         const response = await fetch('/subscribers_data.json');
         const rawData = await response.json();
-        const processed = processSubscribers(rawData);
-        setSubscribers(processed);
-        setSelectedSub(processed[0]);
+        // The data is already processed by the ML script, so we just set it
+        setSubscribers(rawData);
+        setSelectedSub(rawData[0]);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -235,7 +241,7 @@ function App() {
                         >
                         <td>
                             <div className="sub-name">{sub.name}</div>
-                            <div className="sub-meta">{sub.id} • {sub.tier}</div>
+                            <div className="sub-meta">{sub.id} • {sub.tier.replace('.', '')}</div>
                         </td>
                         <td>
                             <span className={`badge badge-${sub.riskLevel.toLowerCase()}`}>
@@ -280,7 +286,7 @@ function App() {
                   <h3 className="card-title">Engagement Velocity</h3>
                   <div style={{ height: '180px', width: '100%', marginTop: '1rem' }}>
                     <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={getEngagementTrend(selectedSub.id)}>
+                      <AreaChart data={getEngagementTrend(selectedSub)}>
                         <defs>
                           <linearGradient id="colorEng" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.2}/>
@@ -317,6 +323,22 @@ function App() {
                         </div>
                       ))}
                       {selectedSub.riskDrivers.length === 0 && <div className="no-drivers">No significant risk drivers detected.</div>}
+                    </div>
+                  </div>
+
+                  <h3 className="card-title mt-2">ML Ensemble Confidence</h3>
+                  <div className="ml-scores-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', marginTop: '1rem' }}>
+                    <div className="ml-score-item" style={{ background: '#f8fafc', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>Log. Reg</div>
+                        <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--primary)' }}>{selectedSub.ml_scores?.logistic_regression}%</div>
+                    </div>
+                    <div className="ml-score-item" style={{ background: '#f8fafc', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>Random Forest</div>
+                        <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--primary)' }}>{selectedSub.ml_scores?.random_forest}%</div>
+                    </div>
+                    <div className="ml-score-item" style={{ background: '#f8fafc', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase' }}>XGBoost</div>
+                        <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--primary)' }}>{selectedSub.ml_scores?.xgboost}%</div>
                     </div>
                   </div>
 
@@ -383,6 +405,7 @@ function App() {
         </div>
 
         {/* AI-Powered Solution Evaluator */}
+        <GlidAnalyzer />
         <AIEvaluator onApiKeyChange={setApiKey} />
       </main>
     </div>
