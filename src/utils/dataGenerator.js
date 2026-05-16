@@ -27,15 +27,26 @@ export const generateSubscribers = (count = 20) => {
     const currentLeads = Math.floor(histLeads * riskFactor);
     const currentEnquiries = Math.floor(histEnquiries * riskFactor);
 
+    // AI-ready features
+    const responseTimeTrend = riskFactor < 0.5 ? "Increasing" : (Math.random() > 0.5 ? "Stable" : "Decreasing");
+    const lastLoginDaysAgo = riskFactor < 0.4 ? Math.floor(Math.random() * 20) + 10 : Math.floor(Math.random() * 5);
+    const sentimentScore = riskFactor < 0.5 ? (Math.random() * 0.4).toFixed(2) : (0.6 + Math.random() * 0.4).toFixed(2);
+
     subscribers.push({
       id: `IM-${1000 + i}`,
       name: SUBSCRIBER_NAMES[i % SUBSCRIBER_NAMES.length],
-      tier: "Platinum",
+      tier: i % 5 === 0 ? "Diamond" : (i % 3 === 0 ? "Platinum" : "Gold"),
       renewalDate: renewalDate.toISOString().split('T')[0],
       engagement: {
         logins: { current: currentLogins, historical: histLogins },
         leads: { current: currentLeads, historical: histLeads },
         enquiries: { current: currentEnquiries, historical: histEnquiries },
+      },
+      features: {
+        responseTimeTrend,
+        lastLoginDaysAgo,
+        sentimentScore: parseFloat(sentimentScore),
+        usageDepth: Math.floor(Math.random() * 100) // % of features used
       },
       accountManager: ["Rajesh Kumar", "Anjali Singh", "Suresh Iyer", "Priya Sharma"][i % 4]
     });
@@ -43,11 +54,16 @@ export const generateSubscribers = (count = 20) => {
   return subscribers;
 };
 
-export const getEngagementTrend = (id) => {
-  // Mock data for a 6-month trend
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-  return months.map((month, index) => ({
-    name: month,
-    engagement: 60 + Math.random() * 40 - (index > 3 ? Math.random() * 30 : 0) // Simulating decline
-  }));
+export const getEngagementTrend = (id, isChurned) => {
+  const months = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let base = isChurned ? 40 : 80;
+  
+  return months.map((month, index) => {
+    // If churned, simulate a steady decline
+    const drift = isChurned ? (index * -8) : (Math.random() * 10 - 5);
+    return {
+      name: month,
+      engagement: Math.max(10, Math.min(100, base + drift + (Math.random() * 10)))
+    };
+  });
 };

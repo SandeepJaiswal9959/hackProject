@@ -1,47 +1,84 @@
+/**
+ * AI-Driven Churn Prediction Engine
+ * Adapted to handle both granular engagement data and CSV-based tenure/mode data.
+ */
+
+const FEATURE_WEIGHTS = {
+  decline: 0.45,       
+  tenure: 0.25,        
+  sentiment: 0.15,     
+  latency: 0.10,       
+  usage: 0.05          
+};
+
 export const calculateRisk = (subscriber) => {
-  const { engagement, renewalDate } = subscriber;
-  const today = new Date();
-  const renewal = new Date(renewalDate);
-  const daysToRenewal = Math.ceil((renewal - today) / (1000 * 60 * 60 * 24));
+  // Extract data (handling both mock and real CSV formats)
+  const { 
+    engagement, 
+    features, 
+    clientSince, 
+    mode, 
+    status,
+    gluser,
+    vertical
+  } = subscriber;
 
-  // Calculate average decline across indicators
-  const loginDecline = (engagement.logins.historical - engagement.logins.current) / engagement.logins.historical;
-  const leadDecline = (engagement.leads.historical - engagement.leads.current) / engagement.leads.historical;
-  const enquiryDecline = (engagement.enquiries.historical - engagement.enquiries.current) / engagement.enquiries.historical;
+  // 1. Calculate Engagement Score (or use baseline if missing in CSV)
+  let declineScore = 0;
+  let avgDecline = 0;
+  
+  if (engagement) {
+    const loginDecline = Math.max(0, (engagement.logins.historical - engagement.logins.current) / engagement.logins.historical);
+    const leadDecline = Math.max(0, (engagement.leads.historical - engagement.leads.current) / engagement.leads.historical);
+    const enquiryDecline = Math.max(0, (engagement.enquiries.historical - engagement.enquiries.current) / engagement.enquiries.historical);
+    avgDecline = (loginDecline + leadDecline + enquiryDecline) / 3;
+    declineScore = Math.min(100, avgDecline * 150);
+  } else {
+    // For real CSV records, "Pending" status indicates high risk
+    declineScore = status === 'Pending' ? 70 : 10;
+  }
 
-  const avgDecline = (loginDecline + leadDecline + enquiryDecline) / 3;
+  // 2. Calculate Tenure Score (1yr = high risk, 3yr = low)
+  const tenureValue = clientSince || 1;
+  const tenureScore = tenureValue === 1 ? 90 : (tenureValue === 2 ? 50 : 10);
+
+  // 3. Normalized Risks
+  const sentimentRisk = features?.sentimentScore ? (1 - features.sentimentScore) * 100 : 30;
+  const latencyRisk = features?.responseTimeTrend === "Increasing" ? 80 : 20;
+  const usageRisk = features?.usageDepth ? (100 - features.usageDepth) : 50;
+
+  // 4. Weighted Churn Probability
+  const churnProbability = (
+    (declineScore * FEATURE_WEIGHTS.decline) +
+    (tenureScore * FEATURE_WEIGHTS.tenure) +
+    (sentimentRisk * FEATURE_WEIGHTS.sentiment) +
+    (latencyRisk * FEATURE_WEIGHTS.latency) +
+    (usageRisk * FEATURE_WEIGHTS.usage)
+  );
 
   let riskLevel = "Low";
-  let score = 0;
+  if (churnProbability >= 60) riskLevel = "High";
+  else if (churnProbability >= 35) riskLevel = "Medium";
 
-  // Rule 1: Renewal Proximity
-  if (daysToRenewal < 30) score += 40;
-  else if (daysToRenewal < 60) score += 25;
-  else if (daysToRenewal <= 90) score += 10;
-
-  // Rule 2: Engagement Decline
-  if (avgDecline > 0.5) score += 50;
-  else if (avgDecline > 0.3) score += 30;
-  else if (avgDecline > 0.1) score += 10;
-
-  // Rule 3: Tier weight (Platinum users are higher priority/risk value)
-  if (subscriber.tier === "Platinum") score += 10;
-
-  // Categorization
-  if (score >= 70) riskLevel = "High";
-  else if (score >= 40) riskLevel = "Medium";
-  else riskLevel = "Low";
+  // Insights based on real CSV fields
+  const insights = [];
+  if (status === 'Pending') insights.push("Payment Pending");
+  if (tenureValue === 1) insights.push("1st Yr Member Risk");
+  if (mode === 'Annual') insights.push("Low Commitment (Annual)");
+  if (vertical === 'Tele Support') insights.push("Tele-Support Segment");
 
   return {
     ...subscriber,
+    id: gluser || subscriber.id,
+    name: subscriber.name || `Seller ${gluser}`,
     riskLevel,
-    riskScore: score,
-    daysToRenewal,
+    riskScore: Math.round(churnProbability),
     avgDecline: Math.round(avgDecline * 100),
+    aiInsights: insights,
+    recommendedStrategy: churnProbability > 60 ? "Immediate AM Intervention" : "Standard Nudge",
     indicators: [
-        { label: 'Logins', decline: Math.round(loginDecline * 100) },
-        { label: 'Leads', decline: Math.round(leadDecline * 100) },
-        { label: 'Enquiries', decline: Math.round(enquiryDecline * 100) }
+      { label: 'Tenure', decline: tenureScore },
+      { label: 'Sentiment', score: features?.sentimentScore || 0.5 }
     ]
   };
 };

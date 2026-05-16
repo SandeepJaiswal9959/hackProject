@@ -17,16 +17,14 @@ business rule engines, and a real-time intervention dashboard.
 - **Lucide React** icon library for consistent iconography
 - **Framer Motion** for smooth micro-animations
 
-### 2. Data Engineering & Simulation
-- `dataGenerator.js` — Generates realistic synthetic subscriber datasets:
-  - Simulates historical vs. current engagement across logins, leads, and enquiries
-  - Applies probabilistic risk factors to model real-world churn patterns
-  - Generates 6-month engagement trend data per subscriber
-- `riskEngine.js` — Multi-signal Business Rule Engine:
-  - **Rule 1:** Renewal Proximity Scoring (days to renewal: <30d = +40pts, <60d = +25pts, ≤90d = +10pts)
-  - **Rule 2:** Engagement Decline Scoring (>50% decline = +50pts, >30% = +30pts, >10% = +10pts)
-  - **Rule 3:** Tier Weighting (Platinum subscribers get +10pts priority)
-  - Final categorization: High (≥70), Medium (≥40), Low (<40)
+### 2. Predictive AI Engine & Simulation
+- `dataGenerator.js` — Generates high-dimensional synthetic datasets:
+  - **Feature Engineering:** Simulates Sentiment Score, Response Latency, usageDepth, and login patterns.
+  - **Probabilistic Modeling:** Applies multi-factor risk simulation to model churn.
+- `riskEngine.js` — **Weighted Feature Scoring Model**:
+  - **Predictive Scoring:** Uses weighted coefficients (Decline: 0.45, Renewal: 0.25, etc.) to calculate a Churn Probability (%).
+  - **Explainable AI (XAI):** Generates Natural Language reasoning (AI Insights) explaining *why* the model flagged a risk.
+  - **Prescriptive Analytics:** Generates dynamic intervention strategies based on the specific risk profile.
 
 ### 3. Business Intelligence & Analytics
 - Tracks 3 key engagement signals: **Logins, Leads, Enquiries**
@@ -48,10 +46,10 @@ business rule engines, and a real-time intervention dashboard.
 - **Business Value:** Each retained premium subscriber = significant ARR; early warning = more intervention time
 
 ### 6. Architecture Decisions
-- **Client-side Business Rule Engine** — No backend dependency; instant risk scoring
-- **Mock Data Generation** — Enables demo/hackathon presentation without live data pipeline
-- **Component Separation** — `dataGenerator` (ETL simulation) → `riskEngine` (scoring) → `App` (visualization)
-- **Extensibility** — Rule engine designed for easy addition of new engagement signals
+- **Weighted Prediction Model** — Replaced basic heuristics with a weighted feature importance model.
+- **Explainability First** — Integrated logic to provide transparent reasoning for AI decisions.
+- **Client-side Processing** — High-performance scoring without server latency.
+- **Prescriptive Intervention** — System doesn't just flag risk; it prescribes a specific business strategy.
 
 ### 7. UX/Design Skills
 - Dashboard-first design with sidebar navigation

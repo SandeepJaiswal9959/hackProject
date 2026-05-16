@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { generateSubscribers, getEngagementTrend } from './utils/dataGenerator';
 import { processSubscribers } from './utils/riskEngine';
+import { getAllRecords } from './utils/churnAnalyzer';
 import AIEvaluator from './components/EvaluationPanel';
+import ChurnAnalysis from './components/ChurnAnalysis';
 import { 
   Users, AlertTriangle, TrendingDown, Clock, 
   Search, Filter, Bell, LayoutDashboard,
-  ChevronRight, ArrowDownRight, ArrowUpRight
+  ChevronRight, ArrowDownRight, ArrowUpRight,
+  Sparkles
 } from 'lucide-react';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, 
@@ -13,14 +16,18 @@ import {
 } from 'recharts';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [subscribers, setSubscribers] = useState([]);
   const [selectedSub, setSelectedSub] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const rawData = generateSubscribers(25);
-    const processed = processSubscribers(rawData);
-    setSubscribers(processed);
+    // Priority: Real CSV Data (Pending users first)
+    const realData = getAllRecords();
+    const processed = processSubscribers(realData);
+    
+    // We'll show the top 50 at-risk sellers by default
+    setSubscribers(processed.slice(0, 50));
     setSelectedSub(processed[0]);
     setLoading(false);
   }, []);
@@ -44,17 +51,17 @@ function App() {
         </div>
         
         <nav>
-          <a href="#" className="nav-item active">
+          <a href="#" className={`nav-item${activeTab === 'dashboard' ? ' active' : ''}`} onClick={() => setActiveTab('dashboard')}>
             <LayoutDashboard size={20} /> Dashboard
+          </a>
+          <a href="#" className={`nav-item${activeTab === 'churn' ? ' active' : ''}`} onClick={() => setActiveTab('churn')}>
+            <TrendingDown size={20} /> Churn Analysis
           </a>
           <a href="#" className="nav-item">
             <Users size={20} /> Subscribers
           </a>
           <a href="#" className="nav-item">
             <AlertTriangle size={20} /> Risk Alerts
-          </a>
-          <a href="#" className="nav-item">
-            <TrendingDown size={20} /> Trends
           </a>
         </nav>
 
@@ -80,6 +87,9 @@ function App() {
           </div>
         </header>
 
+        {activeTab === 'churn' && <ChurnAnalysis />}
+
+        {activeTab === 'dashboard' && <>
         {/* Stats Grid */}
         <div className="kpi-grid">
           <div className="kpi-card">
@@ -129,6 +139,7 @@ function App() {
                     <th>Subscriber</th>
                     <th>Risk</th>
                     <th>Renewal</th>
+                    <th>Risk Reason</th>
                     <th>Decline</th>
                     <th></th>
                   </tr>
@@ -141,17 +152,22 @@ function App() {
                         style={{ cursor: 'pointer', background: selectedSub?.id === sub.id ? '#f8fafc' : 'transparent' }}
                     >
                       <td>
-                        <div style={{ fontWeight: 600 }}>{sub.name}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{sub.id} • {sub.tier}</div>
+                        <div style={{ fontWeight: 700, fontFamily: 'monospace' }}>{sub.gluser || sub.id}</div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{sub.vertical} • {sub.clientSince}yr Member</div>
                       </td>
                       <td>
                         <span className={`badge badge-${sub.riskLevel.toLowerCase()}`}>
-                          {sub.riskLevel}
+                          {sub.riskLevel} ({sub.riskScore}%)
                         </span>
                       </td>
                       <td>
                         <div style={{ fontSize: '0.875rem' }}>{sub.renewalDate}</div>
                         <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>In {sub.daysToRenewal} days</div>
+                      </td>
+                      <td>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', maxWidth: '200px', lineHeight: '1.2' }}>
+                          {sub.aiInsights && sub.aiInsights.length > 0 ? sub.aiInsights[0] : 'Stable performance'}
+                        </div>
                       </td>
                       <td style={{ color: sub.avgDecline > 30 ? 'var(--risk-high)' : 'inherit' }}>
                         {sub.avgDecline}%
@@ -172,7 +188,7 @@ function App() {
                   <h3 style={{ marginBottom: '1rem', fontSize: '1rem' }}>Engagement Trend</h3>
                   <div style={{ height: '200px', width: '100%' }}>
                     <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={getEngagementTrend(selectedSub.id)}>
+                      <AreaChart data={getEngagementTrend(selectedSub.id, selectedSub.churned)}>
                         <defs>
                           <linearGradient id="colorEng" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.1}/>
@@ -210,15 +226,26 @@ function App() {
                     </div>
                   ))}
                   
-                  <div style={{ marginTop: '2rem', padding: '1rem', background: 'var(--primary-light)', borderRadius: 'var(--radius-md)' }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                        Retention Action
+                  <div style={{ marginTop: '1.5rem' }}>
+                    <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>AI Reasoning</h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      {selectedSub.aiInsights.map((insight, idx) => (
+                        <div key={idx} style={{ fontSize: '0.8rem', padding: '0.5rem', background: '#fef2f2', borderLeft: '3px solid #ef4444', color: '#991b1b', borderRadius: '4px' }}>
+                          • {insight}
+                        </div>
+                      ))}
                     </div>
-                    <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>
-                        Assign to <strong>{selectedSub.accountManager}</strong> for training intervention. Engagement has dropped significantly in lead responses.
+                  </div>
+                  
+                  <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', border: '1px solid var(--primary)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <Sparkles size={14} /> AI Recommended Strategy
+                    </div>
+                    <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', marginBottom: '1rem', fontWeight: 500 }}>
+                        {selectedSub.recommendedStrategy}
                     </div>
                     <button 
-                        onClick={() => alert(`Notification sent to ${selectedSub.accountManager} regarding ${selectedSub.name}`)}
+                        onClick={() => alert(`Strategic intervention initiated for ${selectedSub.name}`)}
                         style={{ 
                             width: '100%', 
                             padding: '0.75rem', 
@@ -234,7 +261,7 @@ function App() {
                             gap: '0.5rem'
                         }}
                     >
-                        <Bell size={16} /> Notify Account Manager
+                        Execute Strategy
                     </button>
                   </div>
                 </div>
@@ -245,6 +272,7 @@ function App() {
 
         {/* AI-Powered Solution Evaluator */}
         <AIEvaluator />
+        </>}
       </main>
     </div>
   );
