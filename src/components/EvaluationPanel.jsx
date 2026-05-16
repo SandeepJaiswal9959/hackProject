@@ -126,7 +126,7 @@ function getGrade(total, max) {
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
-export default function AIEvaluator() {
+export default function AIEvaluator({ onApiKeyChange }) {
   const [apiKey, setApiKey] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -171,7 +171,10 @@ export default function AIEvaluator() {
             type="password"
             placeholder="Gemini API Key"
             value={apiKey}
-            onChange={e => setApiKey(e.target.value)}
+            onChange={e => {
+                setApiKey(e.target.value);
+                onApiKeyChange(e.target.value);
+            }}
             onKeyDown={e => e.key === 'Enter' && handleEvaluate()}
             style={{
               padding: '0.55rem 0.875rem',

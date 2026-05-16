@@ -1,0 +1,2048 @@
+[
+  {
+    "id": "121500",
+    "name": "Dextero Business Solution Private Limited",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-06",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "Critical",
+    "riskScore": 84,
+    "churnProbability": 84,
+    "daysToRenewal": -41,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 95
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 93
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 100
+      }
+    ],
+    "top_reasons": [
+      "BuyLead consumption declined by 95% vs 3-month baseline",
+      "Platform login activity dropped by 93%",
+      "Enquiry reply rate declined by 93% \u2014 supplier not engaging with buyers",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 95
+      },
+      {
+        "label": "Platform",
+        "decline": 93
+      },
+      {
+        "label": "Enquiries",
+        "decline": 100
+      },
+      {
+        "label": "Replies",
+        "decline": 93
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 91,
+      "random_forest": 94,
+      "xgboost": 90
+    },
+    "engagement": {
+      "logins": {
+        "historical": 7.3,
+        "current": 0.5
+      },
+      "leads": {
+        "historical": 10.0,
+        "current": 0.5
+      },
+      "enquiries": {
+        "historical": 3.7,
+        "current": 0.0
+      },
+      "replies": {
+        "historical": 22.7,
+        "current": 1.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 52.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 42.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 13.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 4.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 47,
+      "ml_score": 92,
+      "final": 84
+    }
+  },
+  {
+    "id": "595158",
+    "name": "Brahad Elastomers Pvt. Ltd.",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-10",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Critical",
+    "riskScore": 82,
+    "churnProbability": 82,
+    "daysToRenewal": -37,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 100
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 100
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -37
+      }
+    ],
+    "top_reasons": [
+      "BuyLead consumption dropped to zero for the last 2 months",
+      "No platform login (LMS) for 2 consecutive months \u2014 zero digital engagement",
+      "Enquiry reply rate declined by 100% \u2014 supplier not engaging with buyers",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 100
+      },
+      {
+        "label": "Platform",
+        "decline": 100
+      },
+      {
+        "label": "Enquiries",
+        "decline": 4
+      },
+      {
+        "label": "Replies",
+        "decline": 100
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 96,
+      "random_forest": 90,
+      "xgboost": 82
+    },
+    "engagement": {
+      "logins": {
+        "historical": 4.3,
+        "current": 0.0
+      },
+      "leads": {
+        "historical": 3.0,
+        "current": 0.0
+      },
+      "enquiries": {
+        "historical": 4.7,
+        "current": 4.5
+      },
+      "replies": {
+        "historical": 2.0,
+        "current": 0.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 27.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 27.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 8.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 22.0
+      },
+      {
+        "name": "May",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 9.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 46,
+      "ml_score": 89,
+      "final": 82
+    }
+  },
+  {
+    "id": "476072",
+    "name": "Ptronics",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-11",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Critical",
+    "riskScore": 75,
+    "churnProbability": 75,
+    "daysToRenewal": -36,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 100
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 0
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 50
+      }
+    ],
+    "top_reasons": [
+      "Zero BuyLead consumption for 3 consecutive months \u2014 supplier has completely stopped using the platform",
+      "No platform login (LMS) for 3 consecutive months \u2014 zero digital engagement",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Current BL credit balance is zero"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 100
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 50
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 86,
+      "random_forest": 68,
+      "xgboost": 74
+    },
+    "engagement": {
+      "logins": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "leads": {
+        "historical": 0.3,
+        "current": 0.0
+      },
+      "enquiries": {
+        "historical": 1.0,
+        "current": 0.5
+      },
+      "replies": {
+        "historical": 0.0,
+        "current": 0.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 1.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 1.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 2.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 1.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 45,
+      "ml_score": 76,
+      "final": 75
+    }
+  },
+  {
+    "id": "186908",
+    "name": "Rohit Traders",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-04",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "High",
+    "riskScore": 74,
+    "churnProbability": 74,
+    "daysToRenewal": -43,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 88
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 80
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 80
+      }
+    ],
+    "top_reasons": [
+      "BuyLead consumption declined by 88% vs 3-month baseline",
+      "Platform login activity dropped by 80%",
+      "Enquiry reply rate declined by 97% \u2014 supplier not engaging with buyers",
+      "97% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 88
+      },
+      {
+        "label": "Platform",
+        "decline": 80
+      },
+      {
+        "label": "Enquiries",
+        "decline": 80
+      },
+      {
+        "label": "Replies",
+        "decline": 97
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 88,
+      "random_forest": 84,
+      "xgboost": 70
+    },
+    "engagement": {
+      "logins": {
+        "historical": 5.0,
+        "current": 1.0
+      },
+      "leads": {
+        "historical": 4.0,
+        "current": 0.5
+      },
+      "enquiries": {
+        "historical": 10.0,
+        "current": 2.0
+      },
+      "replies": {
+        "historical": 16.7,
+        "current": 0.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 6.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 60.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 21.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 15.0
+      },
+      {
+        "name": "May",
+        "engagement": 1.0
+      },
+      {
+        "name": "May",
+        "engagement": 10.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 42,
+      "ml_score": 81,
+      "final": 74
+    }
+  },
+  {
+    "id": "409391",
+    "name": "Plastomech Engineers",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-08",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "High",
+    "riskScore": 74,
+    "churnProbability": 74,
+    "daysToRenewal": -39,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 83
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 77
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 87
+      }
+    ],
+    "top_reasons": [
+      "BuyLead consumption declined by 83% vs 3-month baseline",
+      "Platform login activity dropped by 77%",
+      "Enquiry reply rate declined by 86% \u2014 supplier not engaging with buyers",
+      "Current BL credit balance is zero"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 83
+      },
+      {
+        "label": "Platform",
+        "decline": 77
+      },
+      {
+        "label": "Enquiries",
+        "decline": 87
+      },
+      {
+        "label": "Replies",
+        "decline": 86
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 91,
+      "random_forest": 70,
+      "xgboost": 66
+    },
+    "engagement": {
+      "logins": {
+        "historical": 28.7,
+        "current": 6.5
+      },
+      "leads": {
+        "historical": 64.7,
+        "current": 11.0
+      },
+      "enquiries": {
+        "historical": 11.7,
+        "current": 1.5
+      },
+      "replies": {
+        "historical": 83.3,
+        "current": 11.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 100
+      },
+      {
+        "name": "Mar",
+        "engagement": 100
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 64.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 44,
+      "ml_score": 76,
+      "final": 74
+    }
+  },
+  {
+    "id": "455199",
+    "name": "Star Roto Pack",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-09",
+    "accountManager": "Tele Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "High",
+    "riskScore": 71,
+    "churnProbability": 71,
+    "daysToRenewal": -38,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 0
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 0
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 50
+      }
+    ],
+    "top_reasons": [
+      "Zero BuyLead consumption for 3 consecutive months \u2014 supplier has completely stopped using the platform",
+      "No platform login (LMS) for 3 consecutive months \u2014 zero digital engagement",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Current BL credit balance is zero"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 50
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 88,
+      "random_forest": 69,
+      "xgboost": 77
+    },
+    "engagement": {
+      "logins": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "leads": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "enquiries": {
+        "historical": 11.0,
+        "current": 5.5
+      },
+      "replies": {
+        "historical": 0.0,
+        "current": 0.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 14.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 14.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 5.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 5.0
+      },
+      {
+        "name": "May",
+        "engagement": 3.0
+      },
+      {
+        "name": "May",
+        "engagement": 8.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 40,
+      "ml_score": 78,
+      "final": 71
+    }
+  },
+  {
+    "id": "671174",
+    "name": "Mangesh Industries",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-12",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "High",
+    "riskScore": 71,
+    "churnProbability": 71,
+    "daysToRenewal": -35,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 0
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 0
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -35
+      }
+    ],
+    "top_reasons": [
+      "Zero BuyLead consumption for 3 consecutive months \u2014 supplier has completely stopped using the platform",
+      "No platform login (LMS) for 2 consecutive months \u2014 zero digital engagement",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Current BL credit balance is zero"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 25
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 85,
+      "random_forest": 75,
+      "xgboost": 73
+    },
+    "engagement": {
+      "logins": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "leads": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "enquiries": {
+        "historical": 0.7,
+        "current": 0.5
+      },
+      "replies": {
+        "historical": 0.0,
+        "current": 0.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 2.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 0.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 0.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 4.0
+      },
+      {
+        "name": "May",
+        "engagement": 0.0
+      },
+      {
+        "name": "May",
+        "engagement": 1.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 40,
+      "ml_score": 78,
+      "final": 71
+    }
+  },
+  {
+    "id": "56190",
+    "name": "Parul Technochem LLP",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-02",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Medium",
+    "riskScore": 54,
+    "churnProbability": 54,
+    "daysToRenewal": -45,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 0
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 0
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -45
+      }
+    ],
+    "top_reasons": [
+      "Zero BuyLead consumption for 3 consecutive months \u2014 supplier has completely stopped using the platform",
+      "No platform login (LMS) for 3 consecutive months \u2014 zero digital engagement",
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Renewal due in -45 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 0
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 26,
+      "random_forest": 41,
+      "xgboost": 23
+    },
+    "engagement": {
+      "logins": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "leads": {
+        "historical": 0.0,
+        "current": 0.0
+      },
+      "enquiries": {
+        "historical": 1.0,
+        "current": 1.5
+      },
+      "replies": {
+        "historical": 0.0,
+        "current": 0.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 2.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 1.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 0.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 1.0
+      },
+      {
+        "name": "May",
+        "engagement": 2.0
+      },
+      {
+        "name": "May",
+        "engagement": 1.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 42,
+      "ml_score": 30,
+      "final": 54
+    }
+  },
+  {
+    "id": "616038",
+    "name": "Perfect Image",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-06",
+    "accountManager": "Field Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "Medium",
+    "riskScore": 34,
+    "churnProbability": 34,
+    "daysToRenewal": -41,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Critical",
+        "value": 79
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 66
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 59
+      }
+    ],
+    "top_reasons": [
+      "BuyLead consumption declined by 79% vs 3-month baseline",
+      "Platform login activity dropped by 66%",
+      "Enquiry reply rate declined by 74% \u2014 supplier not engaging with buyers",
+      "Renewal due in -41 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 79
+      },
+      {
+        "label": "Platform",
+        "decline": 66
+      },
+      {
+        "label": "Enquiries",
+        "decline": 59
+      },
+      {
+        "label": "Replies",
+        "decline": 74
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 25,
+      "random_forest": 17,
+      "xgboost": 21
+    },
+    "engagement": {
+      "logins": {
+        "historical": 22.3,
+        "current": 7.5
+      },
+      "leads": {
+        "historical": 59.3,
+        "current": 12.5
+      },
+      "enquiries": {
+        "historical": 17.0,
+        "current": 7.0
+      },
+      "replies": {
+        "historical": 111.7,
+        "current": 28.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 100
+      },
+      {
+        "name": "Mar",
+        "engagement": 100
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 9.0
+      },
+      {
+        "name": "May",
+        "engagement": 75.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 26,
+      "ml_score": 21,
+      "final": 34
+    }
+  },
+  {
+    "id": "221668",
+    "name": "Vin-At Medical Systems",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-14",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 24,
+    "churnProbability": 24,
+    "daysToRenewal": -33,
+    "riskDrivers": [
+      {
+        "type": "BuyLeads",
+        "impact": "Moderate",
+        "value": 50
+      },
+      {
+        "type": "Platform Login",
+        "impact": "High",
+        "value": 64
+      },
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 61
+      }
+    ],
+    "top_reasons": [
+      "Platform login activity dropped by 64%",
+      "Enquiry reply rate declined by 77% \u2014 supplier not engaging with buyers",
+      "Renewal due in -33 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Declining",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 50
+      },
+      {
+        "label": "Platform",
+        "decline": 64
+      },
+      {
+        "label": "Enquiries",
+        "decline": 61
+      },
+      {
+        "label": "Replies",
+        "decline": 77
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 3,
+      "random_forest": 14,
+      "xgboost": 8
+    },
+    "engagement": {
+      "logins": {
+        "historical": 21.0,
+        "current": 7.5
+      },
+      "leads": {
+        "historical": 125.3,
+        "current": 63.0
+      },
+      "enquiries": {
+        "historical": 52.0,
+        "current": 20.5
+      },
+      "replies": {
+        "historical": 106.0,
+        "current": 24.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 100
+      },
+      {
+        "name": "Mar",
+        "engagement": 100
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 57.0
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 21,
+      "ml_score": 8,
+      "final": 24
+    }
+  },
+  {
+    "id": "409338",
+    "name": "Pawan Enterprises",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-11",
+    "accountManager": "Tele Support",
+    "status": "Pending",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "Low",
+    "riskScore": 23,
+    "churnProbability": 23,
+    "daysToRenewal": -36,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -36
+      },
+      {
+        "type": "Credits Lapsed",
+        "impact": "High",
+        "value": 100
+      }
+    ],
+    "top_reasons": [
+      "100% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Current BL credit balance is zero",
+      "Renewal due in -36 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 0
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 8,
+      "random_forest": 14,
+      "xgboost": 54
+    },
+    "engagement": {
+      "logins": {
+        "historical": 5.0,
+        "current": 5.5
+      },
+      "leads": {
+        "historical": 4.0,
+        "current": 4.0
+      },
+      "enquiries": {
+        "historical": 1.0,
+        "current": 1.5
+      },
+      "replies": {
+        "historical": 6.0,
+        "current": 8.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 30.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 15.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 15.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 7.0
+      },
+      {
+        "name": "May",
+        "engagement": 4.0
+      },
+      {
+        "name": "May",
+        "engagement": 40.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 13,
+      "ml_score": 25,
+      "final": 23
+    }
+  },
+  {
+    "id": "199502",
+    "name": "Celeritus Engineering",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-10",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Multi Year",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 17,
+    "churnProbability": 17,
+    "daysToRenewal": -37,
+    "riskDrivers": [
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 53
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -37
+      },
+      {
+        "type": "Credits Lapsed",
+        "impact": "High",
+        "value": 92
+      }
+    ],
+    "top_reasons": [
+      "92% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Renewal due in -37 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Warning",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 21
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 53
+      },
+      {
+        "label": "Replies",
+        "decline": 21
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 8,
+      "random_forest": 6,
+      "xgboost": 15
+    },
+    "engagement": {
+      "logins": {
+        "historical": 4.0,
+        "current": 4.0
+      },
+      "leads": {
+        "historical": 6.3,
+        "current": 5.0
+      },
+      "enquiries": {
+        "historical": 9.7,
+        "current": 4.5
+      },
+      "replies": {
+        "historical": 11.3,
+        "current": 9.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 27.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 36.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 21.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 53.0
+      },
+      {
+        "name": "May",
+        "engagement": 18.0
+      },
+      {
+        "name": "May",
+        "engagement": 25.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 13,
+      "ml_score": 10,
+      "final": 17
+    }
+  },
+  {
+    "id": "168739",
+    "name": "Pal Infrastructure Solutions",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-08",
+    "accountManager": "Tele Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 14,
+    "churnProbability": 14,
+    "daysToRenewal": -39,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -39
+      }
+    ],
+    "top_reasons": [
+      "Enquiry reply rate declined by 84% \u2014 supplier not engaging with buyers",
+      "Catalog Quality Score below average at 39/100",
+      "Renewal due in -39 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Warning",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 25
+      },
+      {
+        "label": "Platform",
+        "decline": 31
+      },
+      {
+        "label": "Enquiries",
+        "decline": 24
+      },
+      {
+        "label": "Replies",
+        "decline": 84
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 3,
+      "random_forest": 5,
+      "xgboost": 15
+    },
+    "engagement": {
+      "logins": {
+        "historical": 16.7,
+        "current": 11.5
+      },
+      "leads": {
+        "historical": 274.0,
+        "current": 205.0
+      },
+      "enquiries": {
+        "historical": 131.0,
+        "current": 100.0
+      },
+      "replies": {
+        "historical": 33.7,
+        "current": 5.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 100
+      },
+      {
+        "name": "Mar",
+        "engagement": 100
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 11,
+      "ml_score": 8,
+      "final": 14
+    }
+  },
+  {
+    "id": "110850",
+    "name": "Gandhi International Sales",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-07",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Multi Year",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 12,
+    "churnProbability": 12,
+    "daysToRenewal": -40,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -40
+      },
+      {
+        "type": "Credits Lapsed",
+        "impact": "High",
+        "value": 96
+      }
+    ],
+    "top_reasons": [
+      "96% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Catalog Quality Score below average at 36/100",
+      "Renewal due in -40 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 0
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 2,
+      "random_forest": 3,
+      "xgboost": 6
+    },
+    "engagement": {
+      "logins": {
+        "historical": 0.7,
+        "current": 2.5
+      },
+      "leads": {
+        "historical": 1.3,
+        "current": 2.0
+      },
+      "enquiries": {
+        "historical": 1.3,
+        "current": 1.5
+      },
+      "replies": {
+        "historical": 0.7,
+        "current": 2.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 5.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 6.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 3.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 8.0
+      },
+      {
+        "name": "May",
+        "engagement": 4.0
+      },
+      {
+        "name": "May",
+        "engagement": 18.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 11,
+      "ml_score": 4,
+      "final": 12
+    }
+  },
+  {
+    "id": "130918",
+    "name": "Pilot Exports",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-11",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Multi Year",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 8,
+    "churnProbability": 8,
+    "daysToRenewal": -36,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -36
+      }
+    ],
+    "top_reasons": [
+      "Renewal due in -36 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Warning",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 27
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 0
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 3,
+      "random_forest": 9,
+      "xgboost": 7
+    },
+    "engagement": {
+      "logins": {
+        "historical": 1.3,
+        "current": 6.0
+      },
+      "leads": {
+        "historical": 289.7,
+        "current": 211.5
+      },
+      "enquiries": {
+        "historical": 15.3,
+        "current": 16.0
+      },
+      "replies": {
+        "historical": 1.0,
+        "current": 1.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 100
+      },
+      {
+        "name": "Mar",
+        "engagement": 100
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 5,
+      "ml_score": 6,
+      "final": 8
+    }
+  },
+  {
+    "id": "425428",
+    "name": "Elet Electronics",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-12",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Multi Year",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 8,
+    "churnProbability": 8,
+    "daysToRenewal": -35,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -35
+      },
+      {
+        "type": "Credits Lapsed",
+        "impact": "High",
+        "value": 68
+      }
+    ],
+    "top_reasons": [
+      "68% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Renewal due in -35 days \u2014 immediate intervention required",
+      "Outgoing call answer rate dropped significantly \u2014 supplier unreachable"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 0
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 1,
+      "random_forest": 1,
+      "xgboost": 6
+    },
+    "engagement": {
+      "logins": {
+        "historical": 1.0,
+        "current": 9.0
+      },
+      "leads": {
+        "historical": 0.0,
+        "current": 10.0
+      },
+      "enquiries": {
+        "historical": 2.3,
+        "current": 7.0
+      },
+      "replies": {
+        "historical": 0.0,
+        "current": 17.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 11.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 5.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 0.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 2.0
+      },
+      {
+        "name": "May",
+        "engagement": 33.0
+      },
+      {
+        "name": "May",
+        "engagement": 55.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 7,
+      "ml_score": 3,
+      "final": 8
+    }
+  },
+  {
+    "id": "267026",
+    "name": "Matha Constructions",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-04",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 7,
+    "churnProbability": 7,
+    "daysToRenewal": -43,
+    "riskDrivers": [
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -43
+      },
+      {
+        "type": "Credits Lapsed",
+        "impact": "High",
+        "value": 66
+      }
+    ],
+    "top_reasons": [
+      "66% of allocated BL credits lapsed unused \u2014 supplier is not extracting value from subscription",
+      "Renewal due in -43 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Warning",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 18
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 27
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 5,
+      "random_forest": 2,
+      "xgboost": 6
+    },
+    "engagement": {
+      "logins": {
+        "historical": 13.3,
+        "current": 15.0
+      },
+      "leads": {
+        "historical": 13.3,
+        "current": 11.0
+      },
+      "enquiries": {
+        "historical": 13.7,
+        "current": 10.0
+      },
+      "replies": {
+        "historical": 28.7,
+        "current": 39.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 39.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 92.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 70.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 76.0
+      },
+      {
+        "name": "May",
+        "engagement": 57.0
+      },
+      {
+        "name": "May",
+        "engagement": 75.0
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 5,
+      "ml_score": 4,
+      "final": 7
+    }
+  },
+  {
+    "id": "225978",
+    "name": "See Green Cosmetics",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-02",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 3,
+    "riskLevel": "Low",
+    "riskScore": 3,
+    "churnProbability": 3,
+    "daysToRenewal": -45,
+    "riskDrivers": [
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 57
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -45
+      }
+    ],
+    "top_reasons": [
+      "Renewal due in -45 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 57
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 2,
+      "random_forest": 1,
+      "xgboost": 7
+    },
+    "engagement": {
+      "logins": {
+        "historical": 4.0,
+        "current": 7.0
+      },
+      "leads": {
+        "historical": 20.0,
+        "current": 38.5
+      },
+      "enquiries": {
+        "historical": 21.0,
+        "current": 9.0
+      },
+      "replies": {
+        "historical": 23.7,
+        "current": 42.0
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 63.0
+      },
+      {
+        "name": "Feb",
+        "engagement": 63.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 33.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 15.0
+      },
+      {
+        "name": "May",
+        "engagement": 5.0
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 2,
+      "ml_score": 3,
+      "final": 3
+    }
+  },
+  {
+    "id": "308463",
+    "name": "RMN Erectors",
+    "tier": "Mini Dynamic Catalog.",
+    "renewalDate": "2026-04-15",
+    "accountManager": "Field Support",
+    "status": "Received",
+    "mode": "Annual",
+    "clientSince": 1,
+    "riskLevel": "Low",
+    "riskScore": 3,
+    "churnProbability": 3,
+    "daysToRenewal": -32,
+    "riskDrivers": [
+      {
+        "type": "Enquiries",
+        "impact": "Moderate",
+        "value": 47
+      },
+      {
+        "type": "Renewal",
+        "impact": "Urgent",
+        "value": -32
+      }
+    ],
+    "top_reasons": [
+      "Renewal due in -32 days \u2014 immediate intervention required"
+    ],
+    "recommended_action": "Senior AM escalation \u2014 schedule personal visit within 48 hours + executive call",
+    "engagement_trend": "Stable",
+    "indicators": [
+      {
+        "label": "BuyLeads",
+        "decline": 0
+      },
+      {
+        "label": "Platform",
+        "decline": 0
+      },
+      {
+        "label": "Enquiries",
+        "decline": 47
+      },
+      {
+        "label": "Replies",
+        "decline": 0
+      }
+    ],
+    "ml_scores": {
+      "logistic_regression": 7,
+      "random_forest": 7,
+      "xgboost": 12
+    },
+    "engagement": {
+      "logins": {
+        "historical": 16.7,
+        "current": 18.0
+      },
+      "leads": {
+        "historical": 34.7,
+        "current": 40.0
+      },
+      "enquiries": {
+        "historical": 5.7,
+        "current": 3.0
+      },
+      "replies": {
+        "historical": 36.0,
+        "current": 36.5
+      }
+    },
+    "trendData": [
+      {
+        "name": "Jan",
+        "engagement": 100
+      },
+      {
+        "name": "Feb",
+        "engagement": 94.0
+      },
+      {
+        "name": "Mar",
+        "engagement": 48.0
+      },
+      {
+        "name": "Apr",
+        "engagement": 100
+      },
+      {
+        "name": "May",
+        "engagement": 44.0
+      },
+      {
+        "name": "May",
+        "engagement": 100
+      }
+    ],
+    "scoreBreakdown": {
+      "rule_score": 0,
+      "ml_score": 9,
+      "final": 3
+    }
+  }
+]

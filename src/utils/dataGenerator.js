@@ -43,11 +43,13 @@ export const generateSubscribers = (count = 20) => {
   return subscribers;
 };
 
-export const getEngagementTrend = (id) => {
-  // Mock data for a 6-month trend
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-  return months.map((month, index) => ({
-    name: month,
-    engagement: 60 + Math.random() * 40 - (index > 3 ? Math.random() * 30 : 0) // Simulating decline
-  }));
+// getEngagementTrend is kept for fallback but the dashboard now uses
+// real trendData from the subscriber object (populated by process_data.py).
+export const getEngagementTrend = (subscriber) => {
+  if (subscriber?.trendData && subscriber.trendData.length > 0) {
+    return subscriber.trendData;
+  }
+  // Fallback: flat mock trend when real data unavailable
+  const months = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+  return months.map((month) => ({ name: month, engagement: 40 }));
 };
